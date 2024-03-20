@@ -1,24 +1,46 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
 
-setupCounter(document.querySelector('#counter'))
+const paper = document.querySelector("#paper"),
+ pen = paper.getContext("2d");
+
+ const draw = () => {
+    paper.width = paper.clientWidth;
+    paper.height = paper.clientHeight;
+
+    const start = {
+      x: paper.wdith * 0.1,
+      y: paper.height * 0.9
+    }
+
+    const end = {
+      x: paper.width * 0.9,
+      y: paper.height * 0.9
+    }
+
+    pen.strokeStyle = "white"
+    pen.lineWidth = 6;
+
+    pen.beginPath()
+    pen.moveTo(start.x, start.y);
+    pen.lineTo(end.x, end.y);
+    pen.stroke()
+
+    const center = {
+      x: paper.width * 0.5,
+      y: paper.height * 0.9
+    }
+
+    //Draws arc of the circle
+    pen.beginPath();
+    pen.arc(center.x, center.y, length * 0.05, Math.PI, 2 * Math.PI);
+    pen.stroke();
+
+    //Draw the circle
+    pen.beginPath();
+    pen.arc(center.x, center.y, length * 0.0065, 0, 2 * Math.PI);
+ }
+
+ init();
+
+ draw();
