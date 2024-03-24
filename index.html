@@ -2,14 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+  
     <title>Polyrhythm Visual</title>
   </head>
   <body>
 
+    <div id="control-bar-wrapper">
+      <div id="control-bar">
+        <button id="sound-toggle" class="toggle" type="button" data-toggled="false" onClick="handleSoundToggle()" title="Toggle Pulse">
+          <i class="fa-solid fa-music-slash off"></i>
+          <i class="fa-solid fa-music on"></i>
+        </button>
+      </div>
+    </div>
+    
+    <div id="background-image"></div>
+    
+    <div id="background-filter"></div>
+    
+    
+    <div id="sound-message">
+      <p>Click anywhere to toggle sound</p>
+    </div>
+    
     <canvas id="paper"></canvas>
-
     <script type="module" src="/main.js"></script>
   </body>
 </html>
