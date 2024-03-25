@@ -35,10 +35,10 @@ const colors = [
 const settings = {
   startTime: new Date().getTime(), // This can be in the future
   duration: 900, // Total time for all dots to realign at the starting point
-  maxCycles: Math.max(colors.length, 100), // Must be above colors.length or else...
+  maxCycles: Math.max(colors.length, 125), // Must be above colors.length or else...
   soundEnabled: false, // User still must interact with screen first
   pulseEnabled: true, // Pulse will only show if sound is enabled as well
-  instrument: "vibraphone" // "default" | "wave" | "vibraphone"
+  instrument: "default" // "default" | "wave" | "vibraphone"
 }
 
 const handleSoundToggle = (enabled = !settings.soundEnabled) => {  
